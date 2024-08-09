@@ -41,5 +41,10 @@ python system_info.py --format json
 # Contributing
 Feel free to fork the repository and submit pull requests. Contributions are welcome!
 
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
 
 
