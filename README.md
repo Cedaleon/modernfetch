@@ -17,6 +17,7 @@ Ensure you have Python 3 installed. Install the required Python packages using p
 
 ```bash
 pip install rich psutil
+```
 
 # Usage
 You can run the tool from the command line. By default, it will display information in a table format. Use the --format argument to switch between JSON and table formats.
