@@ -16,11 +16,13 @@ A modern Python tool for displaying system information in a rich, formatted outp
 Ensure you have Python 3 installed. Install the required Python packages using pip:
 
 ```bash
-pip install rich psutil
+git clone https://github.com/Cedaleon/modernfetch.git
 ```
 
 # Usage
-You can run the tool from the command line. By default, it will display information in a table format. Use the --format argument to switch between JSON and table formats.
+```bash
+modernfetch
+```
 
 # Example
 To display system information in table format, run:
