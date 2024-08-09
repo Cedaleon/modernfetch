@@ -13,7 +13,7 @@ A modern Python tool for displaying system information in a rich, formatted outp
 
 ## Installation
 
-Descargue el repositorio:
+Download the repository:
 
 ```bash
 git clone https://github.com/Cedaleon/modernfetch.git
@@ -26,7 +26,7 @@ cd modernfetch
 chmod +x modernfetch
 ./modernfetch.py
 ```
-#For ease of execution, move the script to a directory in PATH:
+# For ease of execution, move the script to a directory in PATH:
 ```bash
 sudo mv modernfetch.py /usr/local/bin/modernfetch
 ```
