@@ -42,8 +42,9 @@ modernfetch
 Feel free to fork the repository and submit pull requests. Contributions are welcome!
 
 # Acknowledgments
-- Rich for the rich text and formatting.
-- Psutil for system information utilities.
+- ChatGPT
+- I
+
 
 
 
