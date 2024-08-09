@@ -36,7 +36,6 @@ modernfetch
 - get_cpu_info(): Retrieves CPU information.
 - get_system_info(): Collects and formats system information.
 - print_info(info, output_format): Displays system information in the specified format.
-- display_logo(): Shows an animated logo.
 
 # Contribution
 Feel free to fork the repository and submit pull requests. Contributions are welcome!
