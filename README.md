@@ -6,10 +6,10 @@ A modern Python tool for displaying system information in rich, formatted output
 
 ## Features
 
-- Displays comprehensive system information including OS, kernel version, CPU, RAM, and more.
+- Shows complete system information including operating system, kernel version, CPU, RAM and more.
 - Supports output in JSON or table format.
-- Features a visually appealing panel with a gradient border and a centered title.
-- Includes an animated logo for a dynamic presentation.
+- Features a visually attractive panel.
+- Includes a logo in customizable ASCII format for a dynamic presentation.
 
 ## Installation
 
