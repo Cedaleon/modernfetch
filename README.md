@@ -1,5 +1,6 @@
 #![modernfetch01](https://github.com/user-attachments/assets/d40e25f1-ada5-421d-bb1c-0c477d9c73f3)
- System Information Tool
+
+# System Information Tool
 
 A modern Python tool for displaying system information in a rich, formatted output. It supports both JSON and table formats and features a stylized animated logo.
 
@@ -16,3 +17,4 @@ Ensure you have Python 3 installed. Install the required Python packages using p
 
 ```bash
 pip install rich psutil
+
