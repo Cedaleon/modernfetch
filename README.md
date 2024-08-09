@@ -13,7 +13,7 @@ A modern Python tool for displaying system information in a rich, formatted outp
 
 ## Installation
 
-Ensure you have Python 3 installed. Install the required Python packages using pip. Luego descargue el repositorio con:
+Descargue el repositorio:
 
 ```bash
 git clone https://github.com/Cedaleon/modernfetch.git
