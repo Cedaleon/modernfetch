@@ -26,6 +26,10 @@ cd modernfetch
 chmod +x modernfetch
 ./modernfetch.py
 ```
+# Para mayor facilidad de ejecución mueva el script a un directorio en PATH:
+```bash
+sudo mv modernfetch.py /usr/local/bin/modernfetch
+```
 
 # Code Overview
 - get_cpu_info(): Retrieves CPU information.
