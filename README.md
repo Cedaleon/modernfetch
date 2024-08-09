@@ -27,17 +27,6 @@ chmod +x modernfetch
 ./modernfetch.py
 ```
 
-
-# Example
-To display system information in table format, run:
-
-```bash
-python system_info.py
-```
-To display system information in JSON format, run:
-```bash
-python system_info.py --format json
-```
 # Code Overview
 - get_cpu_info(): Retrieves CPU information.
 - get_system_info(): Collects and formats system information.
