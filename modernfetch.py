@@ -36,9 +36,12 @@ def get_cpu_info():
             if ':' in line:
                 key, value = line.split(':', 1)
                 cpu_info[key.strip()] = value.strip()
-        return cpu_info.get('Model name', 'Desconocido')
+                
+        # Ajustar para obtener "Nombre del modelo" correctamente
+        return cpu_info.get('Nombre del modelo', cpu_info.get('Model name', 'Desconocido'))
     except Exception as e:
         return f"Error al obtener información del CPU: {e}"
+
 
 def get_system_info():
     info = {
@@ -68,7 +71,7 @@ def print_info(info, output_format):
 
         # Añadir columnas sin encabezado explícito
         table.add_column("", style=STYLE_ICON, width=24, justify="left")  # Ajustar ancho
-        table.add_column("", style=STYLE_VALUE, justify="right")  # Ajustar alineación
+        table.add_column("", style=STYLE_VALUE, width=37, justify="right")  # Ajustar alineación
 
         # Agregar filas sin incluir una fila de encabezado adicional
         for key, value in info.items():
@@ -95,31 +98,70 @@ def print_info(info, output_format):
         console.print("Formato no soportado. Por favor, elige 'json' o 'table'.", style=STYLE_ERROR)
 
 def display_logo():
-    # Mostrar un logo animado más compacto
-    logo = """
+    # Diccionario de logos ASCII para diferentes distribuciones
+    logos = {
+        "Kali": """
 ██╗  ██╗ █████╗ ██╗     ██╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
 ██║ ██╔╝██╔══██╗██║     ██║    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
 █████╔╝ ███████║██║     ██║    ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
 ██╔═██╗ ██╔══██║██║     ██║    ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
 ██║  ██╗██║  ██║███████╗██║    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
 ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
-                               
-    """
-    console.print(Text(logo, style="bold bright_green"), justify="center")
+        """,
+        "Ubuntu": """
+██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗
+██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║
+██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║
+██║   ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║
+╚██████╔╝██████╔╝╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝
+ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝ 
+                                                      
+        """,
+        "Debian": """
+██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗
+██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║
+██║  ██║█████╗  ██████╔╝██║███████║██╔██╗ ██║
+██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║
+██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║
+╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+        """,
+        "Archlinux": """
+ █████╗ ██████╗  ██████╗██╗  ██╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
+██╔══██╗██╔══██╗██╔════╝██║  ██║    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
+███████║██████╔╝██║     ███████║    ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
+██╔══██║██╔══██╗██║     ██╔══██║    ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
+██║  ██║██║  ██║╚██████╗██║  ██║    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
+                                                                          
+        """,
+        "Linuxmint": """
+   ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗    ███╗   ███╗██╗███╗   ██╗████████╗
+   ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝    ████╗ ████║██║████╗  ██║╚══██╔══╝
+██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝     ██╔████╔██║██║██╔██╗ ██║   ██║   
+██║     ██║██║╚██╗██║██║   ██║ ██╔██╗     ██║╚██╔╝██║██║██║╚██╗██║   ██║   
+███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗    ██║ ╚═╝ ██║██║██║ ╚████║   ██║   
+╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝   
+                                                                           
+                                                                          
+        """
+    }
+
+    distro = platform.system()
+    if distro == "Linux":
+        # Identificar la distribución específica
+        distro_info = subprocess.check_output(['lsb_release', '-is'], text=True).strip()
+        logo = logos.get(distro_info, "")
+    else:
+        logo = logos.get("Kali", "")
+
+    # Imprimir el logo en verde brillante y centrado
+    logo_text = Text(logo, style="bright_green")
+    console.print(logo_text, justify="center")
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Una herramienta moderna para información del sistema con formato enriquecido.")
-    parser.add_argument('--format', choices=['json', 'table'], default='table',
-                        help='Formato de salida (por defecto: table)')
-    args = parser.parse_args()
-
-    # Mostrar logo animado
+    # Mostrar el logo en verde brillante
     display_logo()
-
-    # Pausar para mostrar el logo animado
-    time.sleep(1)
-    
+    # Obtener la información del sistema
     system_info = get_system_info()
-    print_info(system_info, args.format)
+    # Mostrar la información en formato tabla
+    print_info(system_info, "table")
