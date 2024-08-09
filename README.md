@@ -43,7 +43,7 @@ Feel free to fork the repository and submit pull requests. Contributions are wel
 
 # Acknowledgments
 - ChatGPT
-- I
+- Candy - my cat
 
 
 
