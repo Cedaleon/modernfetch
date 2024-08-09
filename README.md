@@ -28,5 +28,10 @@ To display system information in table format, run:
 ```bash
 python system_info.py
 ```
+To display system information in JSON format, run:
+```bash
+python system_info.py --format json
+```
+
 
 
