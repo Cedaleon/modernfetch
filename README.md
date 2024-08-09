@@ -29,6 +29,7 @@ chmod +x modernfetch
 # For ease of execution, move the script to a directory in PATH:
 ```bash
 sudo mv modernfetch.py /usr/local/bin/modernfetch
+modernfetch
 ```
 
 # Code Overview
