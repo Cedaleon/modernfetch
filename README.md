@@ -2,7 +2,7 @@
 
 # System Information Tool
 
-A modern Python tool for displaying system information in a rich, formatted output. It supports both JSON and table formats and features a stylized animated logo.
+A modern Python tool for displaying system information in rich, formatted output. It supports JSON and table formats and features a stylized editable ASCII logo.
 
 ## Features
 
