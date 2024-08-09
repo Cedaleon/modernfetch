@@ -38,7 +38,7 @@ python system_info.py --format json
 - print_info(info, output_format): Displays system information in the specified format.
 - display_logo(): Shows an animated logo.
 
-# Contributing
+# Contribution
 Feel free to fork the repository and submit pull requests. Contributions are welcome!
 
 # License
