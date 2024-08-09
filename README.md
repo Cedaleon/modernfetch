@@ -20,9 +20,13 @@ git clone https://github.com/Cedaleon/modernfetch.git
 ```
 
 # Usage
+Puede ejecutar la herramienta desde la línea de comandos. De manera predeterminada
 ```bash
-modernfetch
+cd modernfetch
+chmod +x modernfetch
+./modernfetch.py
 ```
+
 
 # Example
 To display system information in table format, run:
