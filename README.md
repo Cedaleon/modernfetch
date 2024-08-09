@@ -20,13 +20,13 @@ git clone https://github.com/Cedaleon/modernfetch.git
 ```
 
 # Usage
-Puede ejecutar la herramienta desde la línea de comandos. De manera predeterminada
+You can run the tool from the command line. By default
 ```bash
 cd modernfetch
 chmod +x modernfetch
 ./modernfetch.py
 ```
-# Para mayor facilidad de ejecución mueva el script a un directorio en PATH:
+#For ease of execution, move the script to a directory in PATH:
 ```bash
 sudo mv modernfetch.py /usr/local/bin/modernfetch
 ```
