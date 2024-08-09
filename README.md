@@ -25,3 +25,8 @@ You can run the tool from the command line. By default, it will display informat
 # Example
 To display system information in table format, run:
 
+```bash
+python system_info.py
+```
+
+
